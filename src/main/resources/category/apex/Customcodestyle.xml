@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<ruleset name="Codestyle"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>
+Rules which enforce a specific coding style.
+    </description>
+
+ <rule name="CustomNoHardcodedId"
+          since="5.5.0"
+          message="{0} variable {1} should begin with {2}"
+          class="net.sourceforge.pmd.lang.apex.rule.bestpractice.CustomNoHardcodedId"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_apex_codestyle.html#variablenamingconventions">
+        <description>
+Do not used hard coded IDs
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+@isTest
+public class Foo {
+  static testmethod myTestHardCodeId(){
+	Account testAccount=[select Id, name from Account where Id='001300000000401MM'];
+	  testAccount.billingState='CA';
+	  
+	  
+    update testAccount;	  
+	}
+}
+]]>
+        </example>
+    </rule>
+
+    
+        <rule name="CustomOneTriggerPerObject"
+          since="5.5.0"
+          message="only 1 trigger for each object"
+          class="net.sourceforge.pmd.lang.apex.rule.bestpractice.CustomOneTriggerPerObject"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_apex_codestyle.html#variablenamingconventions">
+        <description>
+Normal class doesn't have the test methods
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+
+trigger Accounts on Account {}
+]]>
+        </example>
+    </rule>
+    
+      
+        <rule name="CustomAvoidLogicInTrigger"
+          since="5.5.0"
+          message="only 1 trigger for each object"
+          class="net.sourceforge.pmd.lang.apex.rule.codestyle.CustomAvoidLogicInTrigger"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_apex_codestyle.html#variablenamingconventions">
+        <description>
+Normal class doesn't have the test methods
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+
+trigger Accounts on Account {}
+]]>
+        </example>
+    </rule>
+    
+     <rule name="UnUsedLocalVariableRule"
+          since="5.5.0"
+          message="Avoid unused method parameters such as ''{0}''."
+          class="net.sourceforge.pmd.lang.apex.rule.bestpractice.UnUsedLocalVariableRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_apex_codestyle.html#variablenamingconventions">
+        <description>
+Do not used hard coded IDs
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+public class Foo {
+    public void bar(int param1, int param2) { // param2 is unused
+        int localvar = param1 + 2;
+    }
+}
+]]>
+        </example>
+    </rule>
+ 
+    
+</ruleset>

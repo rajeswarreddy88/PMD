@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Default ruleset used by the CodeClimate Engine for Salesforce.com Apex" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+   <description>Default ruleset used by the Code Climate Engine for Salesforce.com Apex</description>
+
+   <rule ref="category/apex/Customcodestyle.xml/CustomOneTriggerPerObject" message="Custom Rule--> only 1 trigger for each object	  ">
+      <priority>3</priority>
+     <!--  <properties>
+         relevant for Code Climate output only
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties> -->
+   </rule>
+   
+    <rule ref="category/apex/Customcodestyle.xml/CustomAvoidLogicInTrigger" message="Custom Rule--> avoid the login in Trigger	  ">
+      <priority>3</priority>
+     <!--  <properties>
+         relevant for Code Climate output only
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties> -->
+   </rule>
+   
+   
+     <rule ref="category/apex/Customcodestyle.xml/CustomNoHardcodedId" message="Custom Rule-->Do not use Hard Coded id's ">
+      <priority>3</priority>
+      <!--<properties>
+         relevant for Code Climate output only
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>-->
+   </rule>
+   
+   <rule ref="category/apex/Customcodestyle.xml/UnUsedLocalVariableRule" message="Custom Rule-->Do not use Hard Coded id's ">
+      <priority>3</priority>
+      <!--<properties>
+         relevant for Code Climate output only
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>-->
+   </rule>
+   
+   </ruleset>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<test-data
+    xmlns="http://pmd.sourceforge.net/rule-tests"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests http://pmd.sourceforge.net/rule-tests_1_0_0.xsd">
+
+    <test-code>
+        <description>new unused parameter</description>
+        <expected-problems>1</expected-problems>
+                
+        <code><![CDATA[
+public class Foo {
+    public void bar() { // param2 is unused
+       
+      set<String> errorAddedBranchSet = new set<String>();
+             
+    }
+}
+        ]]></code>
+    </test-code>
+    
+     <test-code>
+        <description>all Ok</description>
+        <expected-problems>0</expected-problems>
+                <code><![CDATA[
+public class Foo {
+    public void bar() { 
+       set<String> errorAddedBranchSet = new set<String>();
+       errorAddedBranchSet. add(LOBRegItem.Location__c)
+    }
+}
+        ]]></code>
+    </test-code>
+    
+<!--       <test-code>
+        <description>One unused parameter</description>
+        <expected-problems>1</expected-problems>
+                
+        <code><![CDATA[
+public class Foo {
+    public void bar() { // param2 is unused
+      int localVar;
+             
+    }
+}
+        ]]></code>
+    </test-code>
+    
+     <test-code>
+        <description>all Ok</description>
+        <expected-problems>0</expected-problems>
+                <code><![CDATA[
+public class Foo {
+    public void bar() { 
+     int localVar;
+          if(){
+        localVar="1";
+       
+       
+        }
+    }
+}
+        ]]></code>
+    </test-code> -->
+</test-data>
