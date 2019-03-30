@@ -6,12 +6,15 @@
     xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests http://pmd.sourceforge.net/rule-tests_1_0_0.xsd">
 
     <test-code>
-        <description>new unused parameter</description>
+        <description>unused local variable</description>
         <expected-problems>1</expected-problems>
-                
+        <expected-linenumbers>4</expected-linenumbers>
+        <expected-messages>
+            <message>Avoid unused local variables such as 'errorAddedBranchSet'.</message>
+        </expected-messages>
         <code><![CDATA[
 public class Foo {
-    public void bar() { // param2 is unused
+    public void bar() {
        
       set<String> errorAddedBranchSet = new set<String>();
              
@@ -33,20 +36,22 @@ public class Foo {
         ]]></code>
     </test-code>
     
-<!--       <test-code>
+     <test-code>
         <description>One unused parameter</description>
         <expected-problems>1</expected-problems>
-                
+        <expected-linenumbers>3</expected-linenumbers>
+        <expected-messages>
+            <message>Avoid unused local variables such as 'localVar'.</message>
+        </expected-messages>
         <code><![CDATA[
 public class Foo {
-    public void bar() { // param2 is unused
+    public void bar() {
       int localVar;
-             
     }
 }
         ]]></code>
     </test-code>
-    
+
      <test-code>
         <description>all Ok</description>
         <expected-problems>0</expected-problems>
@@ -54,7 +59,7 @@ public class Foo {
 public class Foo {
     public void bar() { 
      int localVar;
-          if(){
+          if(true){
         localVar="1";
        
        
@@ -62,5 +67,5 @@ public class Foo {
     }
 }
         ]]></code>
-    </test-code> -->
+    </test-code>
 </test-data>

@@ -9,6 +9,7 @@
 Rules which enforce a specific coding style.
     </description>
 
+<!--
  <rule name="CustomNoHardcodedId"
           since="5.5.0"
           message="{0} variable {1} should begin with {2}"
@@ -69,12 +70,11 @@ trigger Accounts on Account {}
 ]]>
         </example>
     </rule>
-    
+-->
      <rule name="UnUsedLocalVariableRule"
           since="5.5.0"
-          message="Avoid unused method parameters such as ''{0}''."
-          class="net.sourceforge.pmd.lang.apex.rule.bestpractice.UnUsedLocalVariableRule"
-          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_apex_codestyle.html#variablenamingconventions">
+          message="Avoid unused local variables such as ''{0}''."
+          class="net.sourceforge.pmd.lang.apex.rule.bestpractice.UnUsedLocalVariableRule">
         <description>
 Do not used hard coded IDs
         </description>
